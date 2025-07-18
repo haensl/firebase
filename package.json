@@ -1,0 +1,54 @@
+{
+  "name": "@haensl/firebase",
+  "version": "1.0.0",
+  "description": "Utilities around firebase admin SDK.",
+  "keywords": [
+    "Firebase",
+    "Admin",
+    "SDK",
+    "JWT"
+  ],
+  "homepage": "https://github.com/haensl/firebase#readme",
+  "bugs": {
+    "url": "https://github.com/haensl/firebase/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haensl/firebase.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "HP Dietz",
+    "url": "https://hpdietz.com",
+    "email": "h.p.dietz@gmail.com"
+  },
+  "funding": "https://github.com/sponsors/haensl",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint '**/*.js'",
+    "lint:junit": "ESLINT_USE_FLAT_CONFIG=true eslint --format junit -o test-results/eslint/results.xml '**/*.js'",
+    "prepare": "if [ ${NODE_ENV} != 'production' ]; then husky; fi",
+    "test": "jest --runInBand --no-cache --colors",
+    "test:junit": "jest --runInBand --no-cache --ci --reporters='default' --reporters='jest-junit'",
+    "tdd": "jest --colors --watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@haensl/eslint-config": "^2.0.0",
+    "eslint": "^9.31.0",
+    "eslint-formatter-junit": "^8.40.0",
+    "firebase-admin": "^13.4.0",
+    "husky": "^9.1.7",
+    "jest": "^30.0.4",
+    "jest-junit": "^16.0.0"
+  },
+  "peerDependencies": {
+    "firebase-admin": "^13.0.0"
+  },
+  "dependencies": {
+    "@haensl/iso-log": "^2.0.7"
+  }
+}
